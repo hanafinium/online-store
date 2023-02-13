@@ -1,12 +1,10 @@
 import CartTotal from "./CartTotal";
-import Navigation from "./Navigation";
 
 function Cart(props) {
   const { cart, setCart } = props;
   console.log(cart);
   return (
     <div>
-      <Navigation />
       <div className="cart-page">
         <section className="cart-content">
           {cart.map((item, index) => {
@@ -21,7 +19,14 @@ function Cart(props) {
                         {item.price}
                       </p>
                     </div>
-                    <a>
+                    <a
+                      onClick={() => {
+                        const newCart = cart.filter(
+                          (itemName) => itemName.name != item.name
+                        );
+                        setCart(newCart);
+                      }}
+                    >
                       <svg
                         width="30"
                         height="30"

@@ -1,7 +1,14 @@
 import React from "react";
+import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
-function Navigation() {
+function Navigation(props) {
+  const cart = props.cart;
+  // updating cart count
+  // const cartCount = useEffect(() => {
+  //   const cartCounter = cart.length;
+  //   return () => cartCounter;
+  // }, cart);
   return (
     <>
       <nav className="navigation">

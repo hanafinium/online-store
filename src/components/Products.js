@@ -1,12 +1,9 @@
-import Navigation from "./Navigation";
 import products from "../data/product-data";
 
 function Products(props) {
-  // const { cart, setCart } = props;
   const cart = props.cart;
   return (
     <>
-      <Navigation />
       <section className="product-list">
         {products.map((item, index) => (
           <div className="product-item" key={index}>
